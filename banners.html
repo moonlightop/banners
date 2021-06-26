@@ -135,12 +135,14 @@
         2 -> 3
         3 -> 4
       */
+        // 淡入淡出轮播
         // Piture.style.transition = 'opacity 1s';
         // Piture.style.opacity = '0.2';
 
+        // 无缝轮播
         Piture.style.transition = 'transform 1s';
         const rotateDistance = -732.85 * nextIndex;
-        // console.log(new Date().getSeconds(),nextIndex,`translateX(${rotateDistance}px)`);
+        console.log(new Date().getSeconds(),nextIndex,`translateX(${rotateDistance}px)`);
         Piture.style.transform = `translateX(${rotateDistance}px)`;
        
         // Actived参数是images数组中的下标
@@ -170,12 +172,12 @@
     }
 
     window.addEventListener('transitionend',() => {
+      // 淡入淡出轮播
       // console.log('transitionend: ',currentIndex,Piture.style.opacity);
       // Piture.style.opacity = '1';
-      
-      const rotateDistance = -732.85 * currentIndex;
-      console.log(new Date().getSeconds(),currentIndex,`translateX(${rotateDistance}px)`);
-      Piture.style.transform = `translateX(${rotateDistance}px)`;
+      // const rotateDistance = -732.85 * currentIndex;
+      // console.log(new Date().getSeconds(),currentIndex,`translateX(${rotateDistance}px)`);
+      // Piture.style.transform = `translateX(${rotateDistance}px)`;
 
       if(currentIndex === 4) {
         // 4(展示的是1),立即跳回1
