@@ -1,0 +1,128 @@
+
+
+/* 每张图的展示内容 */
+.container {
+  width: 100%;
+  margin: 100px auto;
+}
+
+
+/* 高斯模糊的背景图 */
+.bg {
+  width: 100%;
+  height: 285px;
+  position: absolute;
+
+  background-size: 6000px;
+  background-position: center center;
+
+  /* filter: blur(40px,20px); */
+  /* z-index: 1; */
+}
+
+
+.banners {
+  width: 732.85px;
+  height: 285px;
+
+  overflow: hidden;
+  margin: 0 auto;
+
+  position: relative;
+  /* z-index: 2; */
+}
+/* hover时显示箭头 */
+.banners:hover .arrow {
+  display: block;
+}
+
+
+/* 左右滚动的箭头 */
+.arrow {
+  display: none;
+}
+/* 左右箭头布局 */
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: 1px solid blue;
+  border-width: 20px;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  cursor: pointer;
+
+}
+.left-arrow:hover {
+  border-left-color: darkmagenta;
+}
+.right-arrow:hover {
+  border-right-color: darkmagenta;
+}
+.left-arrow {
+  border-right-color: transparent;
+  left: 0;
+
+}
+.right-arrow {
+  border-left-color: transparent;
+  right: 0;
+
+}
+
+
+/* 包裹所有图片的容器 */
+/* 由图片撑开 */
+.piture {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  /* 默认展示第一张图片,也就是对应数组的下标为1 */
+  transform: translate(-732.85px);
+}
+/* 每张图片 */
+.piture :nth-child(n) {
+  display: block;
+  /* width: 985px; */
+  height: 285px;
+  background-color: burlywood;
+
+}
+
+
+.circle {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+/* 每张图片对应的圆点 */
+.circle :nth-child(n) {
+  display: block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  margin-left: 10px;
+  cursor: pointer;
+
+  background-color: white;
+  text-align: center;
+
+}
+.circle :nth-child(1) {
+  margin-left: 0;
+}
+.circle .actived {
+  background-color: crimson;
+}
+.circle-item:hover {
+  background-color: crimson;
+}
